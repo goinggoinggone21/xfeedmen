@@ -61,7 +61,7 @@ try:
 		all_urls_ever = pickle.load(fp)
 		#print(todays_alreadysent_list)
 except:
-				print("Didn't find historical urls pickle")
+	print("Didn't find historical urls pickle")
 	all_urls_ever = []
 
 
