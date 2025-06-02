@@ -26,8 +26,8 @@ jobs:
       #    sudo apt install libtesseract-dev
       - name: Install Python requirements
         run: pip install python-twitter-v2 praw #-U redgifs #-r requirements.txt
-      #- name: Run MA
-      #  run: python main_feed.py ${{secrets.REDDIT_CLIENT_ID}} ${{secrets.REDDIT_CLIENT_SECRET}} ${{secrets.REDDIT_PASSWORD}} ${{secrets.REDDIT_USER_AGENT}} ${{secrets.REDDIT_USER_NAME}} ${{secrets.TWITTER_ACCESS_TOKEN}} ${{secrets.TWITTER_ACCESS_TOKEN_SECRET}} ${{secrets.TWITTER_CONSUMER_KEY}} ${{secrets.TWITTER_CONSUMER_SECRET}} 
+      - name: Run MA
+        run: python main_feed_ma.py ${{secrets.REDDIT_CLIENT_ID}} ${{secrets.REDDIT_CLIENT_SECRET}} ${{secrets.REDDIT_PASSWORD}} ${{secrets.REDDIT_USER_AGENT}} ${{secrets.REDDIT_USER_NAME}} ${{secrets.TWITTER_ACCESS_TOKEN_MA}} ${{secrets.TWITTER_ACCESS_TOKEN_SECRET_MA}} ${{secrets.TWITTER_CONSUMER_KEY_MA}} ${{secrets.TWITTER_CONSUMER_SECRET_MA}} 
       - name: Run AW
         run: python main_feed_aw.py ${{secrets.REDDIT_CLIENT_ID}} ${{secrets.REDDIT_CLIENT_SECRET}} ${{secrets.REDDIT_PASSWORD}} ${{secrets.REDDIT_USER_AGENT}} ${{secrets.REDDIT_USER_NAME}} ${{secrets.TWITTER_ACCESS_TOKEN_AW2}} ${{secrets.TWITTER_ACCESS_TOKEN_SECRET_AW2}} ${{secrets.TWITTER_CONSUMER_KEY_AW2}} ${{secrets.TWITTER_CONSUMER_SECRET_AW2}} 
       #- name: Set env vars
