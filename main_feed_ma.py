@@ -22,7 +22,7 @@ def get_tweet_title(reddit_title):
     try:
         reddit_title_clean = reddit_title.replace('[Discussion]','').replace('[Pick]','')
         if (('thelisaann' in reddit_title_clean.lower()) | 
-                ('comments' in reddit_title_clean.lower())):
+                ('comments' in reddit_title_clean.lower()) | (len(reddit_title_clean.lower()) < 4)):
             reddit_title_clean = reddit_title_clean.replace('[','')
         #print('reddit_title_clean ', reddit_title_clean)
         brackets = reddit_title_clean.split('[')[1].split(']')[0]
