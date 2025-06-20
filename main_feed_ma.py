@@ -87,7 +87,7 @@ print('submission_url: ', submission_url)
 print('submission_title: ', submission_title)
 print('tweet_title_final: ', tweet_title_final)
 
-filename = 'to_upload.mp4'
+filename = 'to_upload_ma.mp4'
 if os.path.exists(filename):
     os.remove(filename)
 

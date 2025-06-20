@@ -89,7 +89,7 @@ except:
 	print('Creating new all_titles_ever list')
 	all_titles_ever = []
 
-filename = 'to_upload.mp4'
+filename = 'to_upload_bl.mp4'
 
 try:
     os.remove(filename)
