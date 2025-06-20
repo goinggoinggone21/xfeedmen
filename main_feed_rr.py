@@ -48,14 +48,14 @@ reddit = praw.Reddit(client_id=str(input_args[1]), #REDDIT_CLIENT_ID
 twitter_api_authorized = Api(
 		access_token=input_args[6], #TWITTER_ACCESS_TOKEN,
 		access_secret=input_args[7], #TWITTER_ACCESS_TOKEN_SECRET
-		client_id = '1861172154123067392',
+		client_id = '1935887086982500352RileyReidFe',
 		consumer_key = input_args[8], #TWITTER_CONSUMER_KEY
 		consumer_secret = input_args[9], #TWITTER_CONSUMER_SECRET
 	oauth_flow=True
 	)
 
 #Load all list to remove duplicates
-all_urls_fn = 'all_aw_feed_urls_ever.ob'
+all_urls_fn = 'all_rr_feed_urls_ever.ob'
 try:
 	with open (all_urls_fn, 'rb') as fp:
 		all_urls_ever = pickle.load(fp)
@@ -66,9 +66,9 @@ except:
 
 
 #Load Reddits
-reddits_with_redgif = [x for x in reddit.subreddit('AngelaWhite').top(time_filter='year',limit=1000) if ('redgifs' in x.url)]
-reddits_with_redgif = reddits_with_redgif + [x for x in reddit.subreddit('AngelaWhite').top(time_filter='month',limit=1000) if ('redgifs' in x.url)]
-reddits_with_redgif = reddits_with_redgif + [x for x in reddit.subreddit('AngelaWhite').top(time_filter='all',limit=1000) if ('redgifs' in x.url)]
+reddits_with_redgif = [x for x in reddit.subreddit('RileyReid').top(time_filter='year',limit=1000) if ('redgifs' in x.url)]
+reddits_with_redgif = reddits_with_redgif + [x for x in reddit.subreddit('RileyReid').top(time_filter='month',limit=1000) if ('redgifs' in x.url)]
+reddits_with_redgif = reddits_with_redgif + [x for x in reddit.subreddit('RileyReid').top(time_filter='all',limit=1000) if ('redgifs' in x.url)]
 print('population: ', len(reddits_with_redgif))
 
 

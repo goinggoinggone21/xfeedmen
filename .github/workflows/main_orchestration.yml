@@ -29,7 +29,9 @@ jobs:
       - name: Run MA
         run: python main_feed_ma.py ${{secrets.REDDIT_CLIENT_ID}} ${{secrets.REDDIT_CLIENT_SECRET}} ${{secrets.REDDIT_PASSWORD}} ${{secrets.REDDIT_USER_AGENT}} ${{secrets.REDDIT_USER_NAME}} ${{secrets.TWITTER_ACCESS_TOKEN_MA}} ${{secrets.TWITTER_ACCESS_TOKEN_SECRET_MA}} ${{secrets.TWITTER_CONSUMER_KEY_MA}} ${{secrets.TWITTER_CONSUMER_SECRET_MA}} 
       - name: Run AW
-        run: python main_feed_aw.py ${{secrets.REDDIT_CLIENT_ID}} ${{secrets.REDDIT_CLIENT_SECRET}} ${{secrets.REDDIT_PASSWORD}} ${{secrets.REDDIT_USER_AGENT}} ${{secrets.REDDIT_USER_NAME}} ${{secrets.TWITTER_ACCESS_TOKEN_AW2}} ${{secrets.TWITTER_ACCESS_TOKEN_SECRET_AW2}} ${{secrets.TWITTER_CONSUMER_KEY_AW2}} ${{secrets.TWITTER_CONSUMER_SECRET_AW2}} 
+        run: python main_feed_aw.py ${{secrets.REDDIT_CLIENT_ID}} ${{secrets.REDDIT_CLIENT_SECRET}} ${{secrets.REDDIT_PASSWORD}} ${{secrets.REDDIT_USER_AGENT}} ${{secrets.REDDIT_USER_NAME}} ${{secrets.TWITTER_ACCESS_TOKEN_AW2}} ${{secrets.TWITTER_ACCESS_TOKEN_SECRET_AW2}} ${{secrets.TWITTER_CONSUMER_KEY_AW2}} ${{secrets.TWITTER_CONSUMER_SECRET_AW2}}
+      - name: Run RR
+        run: python main_feed_aw.py ${{secrets.REDDIT_CLIENT_ID}} ${{secrets.REDDIT_CLIENT_SECRET}} ${{secrets.REDDIT_PASSWORD}} ${{secrets.REDDIT_USER_AGENT}} ${{secrets.REDDIT_USER_NAME}} ${{secrets.TWITTER_ACCESS_TOKEN_RR}} ${{secrets.TWITTER_ACCESS_TOKEN_SECRET_RR}} ${{secrets.TWITTER_CONSUMER_KEY_RR}} ${{secrets.TWITTER_CONSUMER_SECRET_RR}}  
       #- name: Set env vars
       #  run: |
       #    echo "DATE=$(python -c 'import datetime as dt; print(dt.datetime.now().date())')" >> $GITHUB_ENV
