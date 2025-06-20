@@ -52,9 +52,9 @@ def get_redgifs_embedded_video_url(redgifs_url, output_fn):
 		traceback.print_exc()
 		return
 def convert_hastag_to_at(tweet_title_):
-	if '#AngelWicky' in   tweet_title_:
-		return  tweet_title_.replace('#AngelWicky','@Angel_Wicky_II')
-	elif '#SukiSin' in tweet_title_:
+	#if '#AngelWicky' in   tweet_title_:
+	#	return  tweet_title_.replace('#AngelWicky','@Angel_Wicky_II')
+	if '#SukiSin' in tweet_title_:
 		return tweet_title_.replace('#SukiSin','@sukisinxx')
 	elif '#liz_103' in tweet_title_:
 		return tweet_title_.replace('#liz_103','@LilyLouOfficial')
@@ -78,8 +78,8 @@ def convert_hastag_to_at(tweet_title_):
 		return tweet_title_.replace('#AvaDevine','@1avadevine')
 	elif '#RemyLaCroix' in tweet_title_:
 		return tweet_title_.replace('#RemyLaCroix','@RemyLaCroixxxxx')
-	elif '#StephanieMichelle' in tweet_title_:
-		return tweet_title_.replace('#StephanieMichelle','@omystephanie')
+	#elif '#StephanieMichelle' in tweet_title_:
+	#	return tweet_title_.replace('#StephanieMichelle','@omystephanie')
 	elif '#MandyMuse' in tweet_title_:
 		return tweet_title_.replace('#MandyMuse','@mandymusemedia')
 	elif '#KendraLust' in tweet_title_:
@@ -97,7 +97,7 @@ def convert_hastag_to_at(tweet_title_):
 	elif '#evaangelina' in tweet_title_:
 		return tweet_title_.replace('#evaangelina','@onlyevaangelina')	
 	elif '#NatashaNice' in tweet_title_:
-		return tweet_title_.replace('#NatashaNice','@BeNiceNatasha \n \n https://onlyfans.com/benicenatasha')
+		return tweet_title_.replace('#NatashaNice','@BeNiceNatasha')# \n \n https://onlyfans.com/benicenatasha')
 	else:
 		return tweet_title_
 
