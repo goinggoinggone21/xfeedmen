@@ -11,6 +11,7 @@ import os
 import time
 import pickle
 import helper
+import moviepy
 
 sleep_time = random.choice(range(600))
 print('sleep time: ', sleep_time, flush=True)
