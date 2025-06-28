@@ -2,8 +2,8 @@ import requests
 import datetime
 import random
 import requests, traceback, json, io, os, urllib.request, sys
-import moviepy
-#from moviepy.editor import VideoFileClip
+#import moviepy
+from moviepy.editor import VideoFileClip
 
 #sys.stdout.reconfigure(encoding='utf-8')
 
@@ -24,7 +24,7 @@ def has_audio(filepath):
 
     try:
         # Load the video clip
-        clip = moviepy.editor.VideoFileClip(filepath)
+        clip = VideoFileClip(filepath)
 
         # Check if the audio attribute is not None
         if clip.audio is not None:
