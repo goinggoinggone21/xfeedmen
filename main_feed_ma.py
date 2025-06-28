@@ -66,6 +66,14 @@ try:
 except:
 	all_urls_ever = []
 
+bad_urls_fn = 'bad_urls_ma.ob'
+try:
+    with open (bad_urls_fn, 'rb') as fp:
+        bad_urls = pickle.load(fp)
+        #print(todays_alreadysent_list)
+except:
+    bad_urls = []
+
 
 #Load Reddits
 reddits_with_redgif = [x for x in reddit.subreddit('MikeAdriano').top(time_filter='year',limit=1000) if ('redgifs' in x.url)]
@@ -77,7 +85,7 @@ for reddit_submission in reddits_with_redgif:
 	random_index_selection = random.randint(0,len(reddits_with_redgif)-1)
 	submission_url = reddits_with_redgif[random_index_selection].url
 	submission_title = reddits_with_redgif[random_index_selection].title
-	if (str(submission_url) not in all_urls_ever):
+	if ((str(submission_url) not in all_urls_ever) & (str(submission_url) not in bad_urls)):
 		break
 	else:
 		continue
@@ -97,6 +105,11 @@ try:
     file_has_audio = helper.has_audio(filename)   
     if not file_has_audio:
         os.remove(filename)
+    if not os.path.exists(filename): #if url is bad or has no audio, add it to bad list
+        bad_urls.append(submission_url)
+        with open(bad_urls_fn, 'wb') as fp:
+            #pickle.dump([], fp)
+            pickle.dump(bad_urls, fp)
     total_bytes = os.path.getsize(filename)
     print('total_bytes: ', total_bytes)
     if int(total_bytes) < 1000000:
