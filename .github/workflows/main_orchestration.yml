@@ -20,13 +20,13 @@ jobs:
         with:
           python-version: '3.9'
       - name: Install Linux requirements
-        run: |
-          sudo apt install ffmpeg
+      #  run: |
+      #    sudo apt install ffmpeg
       #    sudo apt update
       #    sudo apt install tesseract-ocr
       #    sudo apt install libtesseract-dev
       - name: Install Python requirements
-        run: pip install python-twitter-v2 praw moviepy #-U redgifs #-r requirements.txt
+        run: pip install python-twitter-v2 praw moviepy==1.0.3 #-U redgifs #-r requirements.txt
       - name: Run MA
         run: python main_feed_ma.py ${{secrets.REDDIT_CLIENT_ID}} ${{secrets.REDDIT_CLIENT_SECRET}} ${{secrets.REDDIT_PASSWORD}} ${{secrets.REDDIT_USER_AGENT}} ${{secrets.REDDIT_USER_NAME}} ${{secrets.TWITTER_ACCESS_TOKEN_MA}} ${{secrets.TWITTER_ACCESS_TOKEN_SECRET_MA}} ${{secrets.TWITTER_CONSUMER_KEY_MA}} ${{secrets.TWITTER_CONSUMER_SECRET_MA}} 
       - name: Run AW
