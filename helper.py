@@ -1,10 +1,40 @@
 import requests
 import datetime
 import random
-
-
 import requests, traceback, json, io, os, urllib.request, sys
+from moviepy.editor import VideoFileClip
+
 #sys.stdout.reconfigure(encoding='utf-8')
+
+def has_audio(filepath):
+    """
+    Checks if an MP4 file has an audio track.
+
+    Args:
+        filepath (str): The path to the MP4 file.
+
+    Returns:
+        bool: True if the file has an audio track, False otherwise.
+              Returns None if the file is not found or an error occurs.
+    """
+    if not os.path.exists(filepath):
+        print(f"Error: File not found at '{filepath}'")
+        return None
+
+    try:
+        # Load the video clip
+        clip = VideoFileClip(filepath)
+
+        # Check if the audio attribute is not None
+        if clip.audio is not None:
+            clip.close() # Close the clip to release resources
+            return True
+        else:
+            clip.close() # Close the clip
+            return False
+    except Exception as e:
+        print(f"An error occurred while processing '{filepath}': {e}")
+        return None
 
 
 def get_redgifs_embedded_video_url(redgifs_url, output_fn):
@@ -46,7 +76,6 @@ def get_redgifs_embedded_video_url(redgifs_url, output_fn):
 						# if and set chunk_size parameter to None.
 						# if chunk: 
 						f.write(chunk)
-
 			return hd_video_url
 	except Exception:
 		traceback.print_exc()

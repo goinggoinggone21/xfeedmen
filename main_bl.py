@@ -134,7 +134,9 @@ with open('todays_list.ob', 'wb') as fp:
 	#pickle.dump([], fp)
 	pickle.dump(todays_alreadysent_list, fp)
 
-
+file_has_audio = helper.has_audio(filename)   
+if not file_has_audio:
+	os.remove(filename)
 total_bytes = os.path.getsize(filename)
 print(total_bytes)
 resp = twitter_api_authorized.upload_media_chunked_init(

@@ -93,6 +93,9 @@ if os.path.exists(filename):
 try:
 	#while (not os.path.isfile(filename)) & (str(submission_url) not in all_urls_ever):
 	video_url = helper.get_redgifs_embedded_video_url(redgifs_url=submission_url, output_fn=filename)
+	file_has_audio = helper.has_audio(filename)   
+	if not file_has_audio:
+		os.remove(filename)
 	total_bytes = os.path.getsize(filename)
 	print('total_bytes: ', total_bytes)
 	if int(total_bytes) < 1000000:

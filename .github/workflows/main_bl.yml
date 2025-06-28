@@ -25,7 +25,7 @@ jobs:
       #    sudo apt install tesseract-ocr
       #    sudo apt install libtesseract-dev
       - name: Install Python requirements
-        run: pip install python-twitter-v2 praw #-U redgifs #-r requirements.txt
+        run: pip install python-twitter-v2 praw moviepy #-U redgifs #-r requirements.txt
       - name: Run BL
         run: python main_bl.py ${{secrets.REDDIT_CLIENT_ID}} ${{secrets.REDDIT_CLIENT_SECRET}} ${{secrets.REDDIT_PASSWORD}} ${{secrets.REDDIT_USER_AGENT}} ${{secrets.REDDIT_USER_NAME}} ${{secrets.TWITTER_ACCESS_TOKEN_BL}} ${{secrets.TWITTER_ACCESS_TOKEN_SECRET_BL}} ${{secrets.TWITTER_CONSUMER_KEY_BL}} ${{secrets.TWITTER_CONSUMER_SECRET_BL}} 
       #- name: Set env vars
