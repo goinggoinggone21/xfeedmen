@@ -28,7 +28,7 @@ def get_tweet_title(reddit_title):
 		my_list = ["my", "I", "me", "her", "she", "they", "mine","us","we"]
 
 		# Check if any element from my_list is a substring in my_string
-		if (~(any(element in reddit_title for element in my_list)) & (reddit_title < 20)):
+		if (~(any(element in reddit_title for element in my_list)) & (reddit_title < 20) & (random.choice([1,2,3]==1))):
 			return final_twitter_title#.replace("'S","'s")
 		else:
 			return random.choice(imojis_list)*3
