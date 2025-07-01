@@ -31,7 +31,7 @@ def get_tweet_title(reddit_title):
 		if (~(any(element in reddit_title for element in my_list)) & (reddit_title < 20)):
 			return final_twitter_title#.replace("'S","'s")
 		else:
-			return final_twitter_title = random.choice(imojis_list)*3
+			return random.choice(imojis_list)*3
 		#return final_twitter_title
 	except:
 		print('Error in title')
