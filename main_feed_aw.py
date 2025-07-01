@@ -25,9 +25,16 @@ def get_tweet_title(reddit_title):
 		#print('brackets ',brackets)
 		final_twitter_title = brackets.title() + ' ' + random.choice(imojis_list)
 		#print(final_twitter_title)
-		return final_twitter_title.replace("'S","'s")
+		my_list = ["my", "I", "me", "her", "she", "they", "mine","us","we"]
+
+		# Check if any element from my_list is a substring in my_string
+		if (~(any(element in reddit_title for element in my_list)) & (reddit_title < 20)):
+			return final_twitter_title#.replace("'S","'s")
+		else:
+			return final_twitter_title = random.choice(imojis_list)*3
+		#return final_twitter_title
 	except:
-		print('No Brackets')
+		print('Error in title')
 		final_twitter_title = random.choice(imojis_list)*3
 		#print(final_twitter_title)
 		return final_twitter_title
@@ -81,7 +88,7 @@ for reddit_submission in reddits_with_redgif:
 	else:
 		continue
 
-tweet_title_final = random.choice(imojis_list)*3 #get_tweet_title(submission_title)
+tweet_title_final = get_tweet_title(submission_title) #random.choice(imojis_list)*3 #
 print('submission_url: ', submission_url)
 print('submission_title: ', submission_title)
 print('tweet_title_final: ', tweet_title_final)
