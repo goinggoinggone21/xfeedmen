@@ -19,17 +19,18 @@ import helper
 imojis_list = ['🤍','💟','😍','🤩','🫣','🥵','🥹','❤️‍🔥','🫶','🫦','🔥','✨','💖','💦','⭐','👑']
 def get_tweet_title(reddit_title):
 	try:
-		reddit_title_clean = reddit_title.replace('[Discussion]','').replace('[Pick]','')
+		#reddit_title_clean = reddit_title.replace('[Discussion]','').replace('[Pick]','')
 		#print('reddit_title_clean ', reddit_title_clean)
-		brackets = reddit_title_clean.split('[')[1].split(']')[0]
+		#brackets = reddit_title_clean.split('[')[1].split(']')[0]
 		#print('brackets ',brackets)
-		final_twitter_title = brackets.title() + ' ' + random.choice(imojis_list)
+		#final_twitter_title = brackets.title() + ' ' + random.choice(imojis_list)
 		#print(final_twitter_title)
 		my_list = ["my", "I", "me", "her", "she", "they", "mine","us","we"]
 
 		# Check if any element from my_list is a substring in my_string
 		if (~(any(element in reddit_title for element in my_list)) & (reddit_title < 20) & (random.choice([1,2,3]==1))):
-			return final_twitter_title#.replace("'S","'s")
+			print('reddit_title: ', reddit_title)
+			return reddit_title
 		else:
 			return random.choice(imojis_list)*3
 		#return final_twitter_title
