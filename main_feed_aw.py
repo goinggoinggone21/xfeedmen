@@ -28,7 +28,7 @@ def get_tweet_title(reddit_title):
 		my_list = ["my", "I", "me", "her", "she", "they", "mine","us","we"]
 
 		# Check if any element from my_list is a substring in my_string
-		if (~(any(element in reddit_title for element in my_list)) & (len(reddit_title) < 20) & (random.choice([1,2,3])==1)):
+		if (not (any(element in reddit_title for element in my_list)) & (len(reddit_title) < 20) & (random.choice([1,2,3])==1)):
 			print('reddit_title within get_tweet_title: ', reddit_title)
 			return reddit_title
 		else:
