@@ -138,6 +138,36 @@ def convert_name_to_at(tweet_title_):
 		tweet_title_submit = tweet_title_.replace('Kendra Lust','@KendraLust')
 	elif 'Sage Hunter' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Sage Hunter','@sagexxxhunter')
+	elif 'Hailey Rose' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Hailey Rose','@HaileyRoseFucks')
+	elif 'Alexa Chains' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Alexa Chains','@ChainsAlexxxa')
+	elif 'Aria Sloane' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Aria Sloane','@theariasloane')
+	elif 'Raven Lane' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Raven Lane','@ravenlaneXX')
+	elif 'Rissa May' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Rissa May','@_RissaMay_XO')
+	elif 'Scarlett Rosewood' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Scarlett Rosewood','@ScarlettRose__2')
+	elif 'River Lynn' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('River Lynn','@riverlynnxxx')
+	elif 'Addison Vodka' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Addison Vodka','@addisonv0dka')
+	elif 'Scarlett Hampton' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Scarlett Hampton','@scarletthampt0n')
+	elif 'Dixie Lynn' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Dixie Lynn','@Xxxdixielynn')
+	elif 'Mia Kay' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Mia Kay','@MissMiaKayXXX')
+	elif 'Nicole Nichols' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Nicole Nichols','@NicoleNicholss')
+	elif 'Luna Lovely' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Luna Lovely','@lunalovelyx')
+	elif 'Jewelz Blu' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Jewelz Blu','@jewelz_blu')
+	elif 'Gia Derza' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Gia Derza','@giaderza69')
 	else:
 		tweet_title_submit = tweet_title_
 	if tweet_title_submit[0] == '@':
