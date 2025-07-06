@@ -91,7 +91,7 @@ for reddit_submission in reddits_with_redgif:
 		continue
 
 tweet_title_final = get_tweet_title(submission_title)
-tweet_title_final_with_tags = convert_name_to_at(tweet_title_final)
+tweet_title_final_with_tags = helper.convert_name_to_at(tweet_title_final)
 print('submission_url: ', submission_url)
 print('submission_title: ', submission_title)
 print('tweet_title_final: ', tweet_title_final)
