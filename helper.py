@@ -168,6 +168,10 @@ def convert_name_to_at(tweet_title_):
 		tweet_title_submit = tweet_title_.replace('Jewelz Blu','@jewelz_blu')
 	elif 'Gia Derza' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Gia Derza','@giaderza69')
+	elif 'Sophia Burns' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Sophia Burns','@sophiaburnsx')
+	elif 'Rebel Rhyder' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Rebel Rhyder','@RebelRhyderXXX')
 	else:
 		tweet_title_submit = tweet_title_
 	if tweet_title_submit[0] == '@':
