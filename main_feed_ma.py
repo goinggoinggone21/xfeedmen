@@ -91,9 +91,11 @@ for reddit_submission in reddits_with_redgif:
 		continue
 
 tweet_title_final = get_tweet_title(submission_title)
+tweet_title_final_with_tags = convert_name_to_at(tweet_title_final)
 print('submission_url: ', submission_url)
 print('submission_title: ', submission_title)
 print('tweet_title_final: ', tweet_title_final)
+print('tweet_title_final_with_tags: ', tweet_title_final_with_tags)
 
 filename = 'to_upload_ma.mp4'
 if os.path.exists(filename):
@@ -151,7 +153,7 @@ try:
 
     twitter_api_authorized.create_tweet(
         media_media_ids=[media_id], 
-        text=tweet_title_final
+        text=tweet_title_final_with_tags
     )
 
     os.remove(filename)

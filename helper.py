@@ -133,9 +133,14 @@ def convert_hastag_to_at(tweet_title_):
 
 def convert_name_to_at(tweet_title_):
 	if 'Valerica Steele' in tweet_title_:
-		return tweet_title_.replace('Valerica Steele','@VALERiCAx')
+		tweet_tweet_title_submittitle_submit =  tweet_title_.replace('Valerica Steele','@VALERiCAx')
 	elif 'Kendra Lust' in tweet_title_:
-		return tweet_title_.replace('Kendra Lust','@KendraLust')
+		tweet_title_submit = tweet_title_.replace('Kendra Lust','@KendraLust')
+	elif 'Sage Hunter' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Sage Hunter','@sagexxxhunter')
 	else:
-		return tweet_title_
+		tweet_title_submit = tweet_title_
+	if tweet_title_submit[0] == '@':
+		tweet_title_submit = tweet_title_submit[-1] + ' ' + tweet_title_submit
+	return tweet_title_submit
 
