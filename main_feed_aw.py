@@ -72,13 +72,25 @@ except:
 	print("Didn't find historical urls pickle")
 	all_urls_ever = []
 
+bad_urls_fn = 'bad_urls_aw.ob'
+try:
+	with open (bad_urls_fn, 'rb') as fp:
+		bad_urls = pickle.load(fp)
+		#print(todays_alreadysent_list)
+except:
+	bad_urls = []
+
+
 
 #Load Reddits
 reddits_with_redgif = [x for x in reddit.subreddit('AngelaWhite').top(time_filter='year',limit=1000) if ('redgifs' in x.url)]
 reddits_with_redgif = reddits_with_redgif + [x for x in reddit.subreddit('AngelaWhite').top(time_filter='month',limit=1000) if ('redgifs' in x.url)]
 reddits_with_redgif = reddits_with_redgif + [x for x in reddit.subreddit('AngelaWhite').top(time_filter='all',limit=1000) if ('redgifs' in x.url)]
 print('population: ', len(reddits_with_redgif))
-
+reddits_with_redgif = [x for x in reddits_with_redgif if str(x.url) not in bad_urls]
+print('population without bads: ', len(reddits_with_redgif))
+reddits_with_redgif = [x for x in reddits_with_redgif if str(x.url) not in all_urls_ever]
+print('population without already dones: ', len(reddits_with_redgif))
 
 for reddit_submission in reddits_with_redgif:
 	random_index_selection = random.randint(0,len(reddits_with_redgif)-1)
@@ -103,7 +115,12 @@ try:
 	video_url = helper.get_redgifs_embedded_video_url(redgifs_url=submission_url, output_fn=filename)
 	file_has_audio = helper.has_audio(filename)   
 	if not file_has_audio:
-		os.remove(filename)	
+		os.remove(filename)
+	if not os.path.exists(filename): #if url is bad or has no audio, add it to bad list
+		bad_urls.append(submission_url)
+		with open(bad_urls_fn, 'wb') as fp:
+			#pickle.dump([], fp)
+			pickle.dump(bad_urls, fp)
 	total_bytes = os.path.getsize(filename)
 	print('total_bytes: ', total_bytes)
 	if int(total_bytes) < 1000000:
