@@ -188,6 +188,8 @@ def convert_name_to_at(tweet_title_):
 		tweet_title_submit = tweet_title_.replace('Kay Lovely','@TheKayLovely')
 	if 'Sadie Summers' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Sadie Summers','@originalsadie')
+	if 'Romi Rain' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Romi Rain','@Romi_Rain')
 	
 	if 'tweet_title_submit' not in locals():
 		tweet_title_submit = tweet_title_
