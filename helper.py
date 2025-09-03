@@ -133,54 +133,55 @@ def convert_hastag_to_at(tweet_title_):
 
 def convert_name_to_at(tweet_title_):
 	if 'Valerica Steele' in tweet_title_:
-		tweet_tweet_title_submittitle_submit =  tweet_title_.replace('Valerica Steele','@VALERiCAx')
-	elif 'Kendra Lust' in tweet_title_:
+		tweet_title_submit =  tweet_title_.replace('Valerica Steele','@VALERiCAx')
+	if 'Kendra Lust' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Kendra Lust','@KendraLust')
-	elif 'Sage Hunter' in tweet_title_:
+	if 'Sage Hunter' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Sage Hunter','@sagexxxhunter')
-	elif 'Hailey Rose' in tweet_title_:
+	if 'Hailey Rose' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Hailey Rose','@HaileyRoseFucks')
-	elif 'Alexa Chains' in tweet_title_:
+	if 'Alexa Chains' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Alexa Chains','@ChainsAlexxxa')
-	elif 'Aria Sloane' in tweet_title_:
+	if 'Aria Sloane' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Aria Sloane','@theariasloane')
-	elif 'Raven Lane' in tweet_title_:
+	if 'Raven Lane' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Raven Lane','@ravenlaneXX')
-	elif 'Rissa May' in tweet_title_:
+	if 'Rissa May' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Rissa May','@_RissaMay_XO')
-	elif 'Scarlett Rosewood' in tweet_title_:
+	if 'Scarlett Rosewood' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Scarlett Rosewood','@ScarlettRose__2')
-	elif 'River Lynn' in tweet_title_:
+	if 'River Lynn' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('River Lynn','@riverlynnxxx')
-	elif 'Addison Vodka' in tweet_title_:
+	if 'Addison Vodka' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Addison Vodka','@addisonv0dka')
-	elif 'Scarlett Hampton' in tweet_title_:
+	if 'Scarlett Hampton' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Scarlett Hampton','@scarletthampt0n')
-	elif 'Dixie Lynn' in tweet_title_:
+	if 'Dixie Lynn' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Dixie Lynn','@Xxxdixielynn')
-	elif 'Mia Kay' in tweet_title_:
+	if 'Mia Kay' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Mia Kay','@MissMiaKayXXX')
-	elif 'Nicole Nichols' in tweet_title_:
+	if 'Nicole Nichols' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Nicole Nichols','@NicoleNicholss')
-	elif 'Luna Lovely' in tweet_title_:
+	if 'Luna Lovely' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Luna Lovely','@lunalovelyx')
-	elif 'Jewelz Blu' in tweet_title_:
+	if 'Jewelz Blu' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Jewelz Blu','@jewelz_blu')
-	elif 'Gia Derza' in tweet_title_:
+	if 'Gia Derza' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Gia Derza','@giaderza69')
-	elif 'Sophia Burns' in tweet_title_:
+	if 'Sophia Burns' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Sophia Burns','@sophiaburnsx')
-	elif 'Rebel Rhyder' in tweet_title_:
+	if 'Rebel Rhyder' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Rebel Rhyder','@RebelRhyderXXX')
-	elif 'Jasmine Sherni' in tweet_title_:
+	if 'Jasmine Sherni' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Jasmine Sherni','@jasminesherni_')
-	elif 'Hazel Heart' in tweet_title_:
+	if 'Hazel Heart' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Hazel Heart','@HazelHeartxxx')
-	elif 'Brianna Arson' in tweet_title_:
+	if 'Brianna Arson' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Brianna Arson','@thebriannaarson')
-	elif 'Emily Jade' in tweet_title_:
+	if 'Emily Jade' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Emily Jade','@xoemilyjade')
-	else:
+	
+	if 'tweet_title_submit' not in locals():
 		tweet_title_submit = tweet_title_
 	if tweet_title_submit[0] == '@':
 		tweet_title_submit = tweet_title_submit[-1] + ' ' + tweet_title_submit
