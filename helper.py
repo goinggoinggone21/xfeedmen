@@ -192,7 +192,14 @@ def convert_name_to_at(tweet_title_):
 		tweet_title_submit = tweet_title_.replace('Romi Rain','@Romi_Rain')
 	if 'Tommy King' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Tommy King','@TommyKingXXX')
+	if 'Jennifer White' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Jennifer White','@jenwhitexxx')
+	if 'Harley King' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Harley King','@HarleyKingxx')
+	if 'Violet Myers' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Violet Myers','@violetsaucy')
 	
+
 	if 'tweet_title_submit' not in locals():
 		tweet_title_submit = tweet_title_
 	if tweet_title_submit[0] == '@':
