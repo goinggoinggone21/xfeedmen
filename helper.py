@@ -19,7 +19,7 @@ def has_audio(filepath):
               Returns None if the file is not found or an error occurs.
     """
     if not os.path.exists(filepath):
-        print(f"Error: File not found at '{filepath}'")
+        print(f"helper.has_audio Error: File not found at '{filepath}'")
         return None
 
     try:
@@ -34,7 +34,7 @@ def has_audio(filepath):
             clip.close() # Close the clip
             return False
     except Exception as e:
-        print(f"An error occurred while processing '{filepath}': {e}")
+        print(f"helper.has_audio An error occurred while processing '{filepath}': {e}")
         return None
 
 
