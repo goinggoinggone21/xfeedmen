@@ -182,6 +182,10 @@ def convert_name_to_at(tweet_title_):
 		tweet_title_submit = tweet_title_.replace('Emily Jade','@xoemilyjade')
 	if 'Willow Ryder' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Willow Ryder','@willowryder')
+	if 'Lily Lou' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Lily Lou','@LilyLouOfficial')
+	if 'Kay Lovely' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Kay Lovely','@TheKayLovely')
 	
 	if 'tweet_title_submit' not in locals():
 		tweet_title_submit = tweet_title_
