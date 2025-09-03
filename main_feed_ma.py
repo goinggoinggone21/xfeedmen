@@ -110,8 +110,11 @@ try:
     video_url = helper.get_redgifs_embedded_video_url(redgifs_url=submission_url, output_fn=filename)
     file_has_audio = helper.has_audio(filename)   
     if not file_has_audio:
-        os.remove(filename)
+		print('no audio')
+		if os.path.exists(filename):
+			os.remove(filename)
     if not os.path.exists(filename): #if url is bad or has no audio, add it to bad list
+		print('file bad; adding to bads')
         bad_urls.append(submission_url)
         with open(bad_urls_fn, 'wb') as fp:
             #pickle.dump([], fp)
