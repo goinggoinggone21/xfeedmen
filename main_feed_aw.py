@@ -108,7 +108,7 @@ for reddit_submission in reddits_with_redgif:
 	else:
 		continue
 
-tweet_title_final = get_tweet_title(submission_title) #random.choice(imojis_list)*3 #
+tweet_title_final = random.choice(imojis_list)*3 #get_tweet_title(submission_title) 
 print('submission_url: ', submission_url)
 print('submission_title: ', submission_title)
 print('tweet_title_final: ', tweet_title_final)
