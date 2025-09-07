@@ -92,6 +92,13 @@ print('population without bads: ', len(reddits_with_redgif))
 reddits_with_redgif = [x for x in reddits_with_redgif if str(x.url) not in all_urls_ever]
 print('population without already dones: ', len(reddits_with_redgif))
 
+if len(reddits_with_redgif) == 0:
+	reddits_with_redgif = [x for x in reddit.subreddit('AngelaWhite').top(time_filter='year',limit=1000) if ('redgifs' in x.url)]
+	reddits_with_redgif = reddits_with_redgif + [x for x in reddit.subreddit('AngelaWhite').top(time_filter='month',limit=1000) if ('redgifs' in x.url)]
+	reddits_with_redgif = reddits_with_redgif + [x for x in reddit.subreddit('AngelaWhite').top(time_filter='all',limit=1000) if ('redgifs' in x.url)] 
+	reddits_with_redgif = [x for x in reddits_with_redgif if str(x.url) not in bad_urls]
+	all_urls_ever = []
+	
 for reddit_submission in reddits_with_redgif:
 	random_index_selection = random.randint(0,len(reddits_with_redgif)-1)
 	submission_url = reddits_with_redgif[random_index_selection].url
