@@ -85,7 +85,7 @@ print('population without bads: ', len(reddits_with_redgif))
 reddits_with_redgif = [x for x in reddits_with_redgif if str(x.url) not in all_urls_ever]
 print('population without already dones: ', len(reddits_with_redgif))
 
-if len(reddits_with_redgif) == 0:
+if len(reddits_with_redgif) < 5:
 	reddits_with_redgif = [x for x in reddit.subreddit('MikeAdriano').top(time_filter='year',limit=1000) if ('redgifs' in x.url)]
 	reddits_with_redgif = reddits_with_redgif + [x for x in reddit.subreddit('MikeAdriano').top(time_filter='month',limit=1000) if ('redgifs' in x.url)]
 	reddits_with_redgif = reddits_with_redgif + [x for x in reddit.subreddit('MikeAdriano').top(time_filter='all',limit=1000) if ('redgifs' in x.url)] 
