@@ -47,7 +47,7 @@ def get_tweet_title(reddit_title):
 
 input_args = sys.argv
 
-reddit = prkr.Reddit(client_id=str(input_args[1]), #REDDIT_CLIENT_ID
+reddit = praw.Reddit(client_id=str(input_args[1]), #REDDIT_CLIENT_ID
 						client_secret=str(input_args[2]),#REDDIT_CLIENT_SECRET
 						password=str(input_args[3]), #REDDIT_PASSWORD
 						user_agent=str(input_args[4]), #REDDIT_USER_AGENT
