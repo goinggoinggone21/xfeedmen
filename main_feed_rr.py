@@ -76,6 +76,7 @@ except:
 reddits_with_redgif = [x for x in reddit.subreddit('RileyReid').top(time_filter='year',limit=1000) if ('redgifs' in x.url)]
 reddits_with_redgif = reddits_with_redgif + [x for x in reddit.subreddit('RileyReid').top(time_filter='month',limit=1000) if ('redgifs' in x.url)]
 reddits_with_redgif = reddits_with_redgif + [x for x in reddit.subreddit('RileyReid').top(time_filter='all',limit=1000) if ('redgifs' in x.url)]
+reddits_with_redgif = list(set(reddits_with_redgif))
 print('population: ', len(reddits_with_redgif))
 reddits_with_redgif = [x for x in reddits_with_redgif if str(x.url) not in bad_urls]
 print('population without bads: ', len(reddits_with_redgif))
