@@ -3,7 +3,7 @@ import sys
 import traceback
 from pytwitter import Api
 #import math
-import prkr #for reddit
+import praw #for reddit
 #import requests
 import datetime
 import random
