@@ -198,7 +198,29 @@ def convert_name_to_at(tweet_title_):
 		tweet_title_submit = tweet_title_.replace('Harley King','@HarleyKingxx')
 	if 'Violet Myers' in tweet_title_:
 		tweet_title_submit = tweet_title_.replace('Violet Myers','@violetsaucy')
-	
+	if 'Iris Leon' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Iris Leon','@irisplayswellxo')
+	if 'Mia River' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Mia River','@MiaRiverXXX')
+	if 'Harley Love' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Harley Love','@harlleylovee')
+	if 'Samantha Reigns' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Samantha Reigns','@SamReignsxo')
+	if 'Lola Valentine' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Lola Valentine','@LolaValentine23')
+	if 'Alex Coal' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Alex Coal','@AlexxxCoal')
+	if 'Julia James' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Julia James','@juliajador')
+	if 'Linda Lan' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Linda Lan','@ms_lindalan')
+	if 'Gypsy Rose' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Gypsy Rose','@gypsyrose5star')
+	if 'Cheerleader Kait' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Cheerleader Kait','@cheerleaderkait')
+	if 'Isabel Love' in tweet_title_:
+		tweet_title_submit = tweet_title_.replace('Isabel Love','@Isabellovemodel')
+
 
 	if 'tweet_title_submit' not in locals():
 		tweet_title_submit = tweet_title_
