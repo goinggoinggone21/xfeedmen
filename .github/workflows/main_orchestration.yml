@@ -27,8 +27,6 @@ jobs:
       #    sudo apt install libtesseract-dev
       - name: Install Python requirements
         run: pip install python-twitter-v2 praw moviepy==1.0.3 #-U redgifs #-r requirements.txt
-      - name: Run MA
-        run: python main_feed_ma.py ${{secrets.REDDIT_CLIENT_ID}} ${{secrets.REDDIT_CLIENT_SECRET}} ${{secrets.REDDIT_PASSWORD}} ${{secrets.REDDIT_USER_AGENT}} ${{secrets.REDDIT_USER_NAME}} ${{secrets.TWITTER_ACCESS_TOKEN_MA}} ${{secrets.TWITTER_ACCESS_TOKEN_SECRET_MA}} ${{secrets.TWITTER_CONSUMER_KEY_MA}} ${{secrets.TWITTER_CONSUMER_SECRET_MA}} 
       - name: Run AW
         run: python main_feed_aw.py ${{secrets.REDDIT_CLIENT_ID}} ${{secrets.REDDIT_CLIENT_SECRET}} ${{secrets.REDDIT_PASSWORD}} ${{secrets.REDDIT_USER_AGENT}} ${{secrets.REDDIT_USER_NAME}} ${{secrets.TWITTER_ACCESS_TOKEN_AW2}} ${{secrets.TWITTER_ACCESS_TOKEN_SECRET_AW2}} ${{secrets.TWITTER_CONSUMER_KEY_AW2}} ${{secrets.TWITTER_CONSUMER_SECRET_AW2}}
       - name: Run RR
@@ -37,6 +35,8 @@ jobs:
         run: python main_feed_kr.py ${{secrets.REDDIT_CLIENT_ID}} ${{secrets.REDDIT_CLIENT_SECRET}} ${{secrets.REDDIT_PASSWORD}} ${{secrets.REDDIT_USER_AGENT}} ${{secrets.REDDIT_USER_NAME}} ${{secrets.TWITTER_ACCESS_TOKEN_KR}} ${{secrets.TWITTER_ACCESS_TOKEN_SECRET_KR}} ${{secrets.TWITTER_CONSUMER_KEY_KR}} ${{secrets.TWITTER_CONSUMER_SECRET_KR}}  
       - name: Run AVA
         run: python main_feed_ava.py ${{secrets.REDDIT_CLIENT_ID}} ${{secrets.REDDIT_CLIENT_SECRET}} ${{secrets.REDDIT_PASSWORD}} ${{secrets.REDDIT_USER_AGENT}} ${{secrets.REDDIT_USER_NAME}} ${{secrets.TWITTER_ACCESS_TOKEN_AVA}} ${{secrets.TWITTER_ACCESS_TOKEN_SECRET_AVA}} ${{secrets.TWITTER_CONSUMER_KEY_AVA}} ${{secrets.TWITTER_CONSUMER_SECRET_AVA}}  
+      - name: Run MA
+        run: python main_feed_ma.py ${{secrets.REDDIT_CLIENT_ID}} ${{secrets.REDDIT_CLIENT_SECRET}} ${{secrets.REDDIT_PASSWORD}} ${{secrets.REDDIT_USER_AGENT}} ${{secrets.REDDIT_USER_NAME}} ${{secrets.TWITTER_ACCESS_TOKEN_MA}} ${{secrets.TWITTER_ACCESS_TOKEN_SECRET_MA}} ${{secrets.TWITTER_CONSUMER_KEY_MA}} ${{secrets.TWITTER_CONSUMER_SECRET_MA}} 
       #- name: Set env vars
       #  run: |
       #    echo "DATE=$(python -c 'import datetime as dt; print(dt.datetime.now().date())')" >> $GITHUB_ENV
