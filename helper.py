@@ -7,6 +7,8 @@ from moviepy.editor import VideoFileClip
 
 #sys.stdout.reconfigure(encoding='utf-8')
 
+imojis_list = ['🤍','💟','😍','🤩','🫣','🥵','🥹','❤️‍🔥','🫶','🫦','🔥','✨','💖','💦','⭐','👑']
+
 def has_audio(filepath):
     """
     Checks if an MP4 file has an audio track.
@@ -227,4 +229,74 @@ def convert_name_to_at(tweet_title_):
 	if tweet_title_submit[0] == '@':
 		tweet_title_submit = tweet_title_submit[-1] + ' ' + tweet_title_submit
 	return tweet_title_submit
+
+import requests
+import time
+
+def get_reddit_redgifs(subreddit, limit=1000, time_period="year"):
+    """
+    Returns a list of dictionaries containing title, video_url, and reddit_link.
+    """
+    posts_data = []
+    after = None
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) RedGifsCollector/4.0'}
+    
+    valid_periods = ["hour", "day", "week", "month", "year", "all"]
+    if time_period not in valid_periods:
+        time_period = "year"
+
+    print(f"Fetching top RedGifs from r/{subreddit} | Period: {time_period}")
+
+    while len(posts_data) < limit:
+        url = f"https://www.reddit.com/r/{subreddit}/top.json?t={time_period}&limit=100"
+        if after:
+            url += f"&after={after}"
+            
+        response = requests.get(url, headers=headers)
+        
+        if response.status_code != 200:
+            print(f"Request failed with status: {response.status_code}")
+            break
+            
+        json_data = response.json().get('data', {})
+        children = json_data.get('children', [])
+        
+        if not children:
+            break
+
+        for post in children:
+            p = post['data']
+            video_url = None
+            
+            # Check for RedGifs in the main URL or within a Crosspost
+            sources = [p.get('url', '')]
+            if p.get('crosspost_parent_list'):
+                sources.append(p['crosspost_parent_list'][0].get('url', ''))
+            
+            for link in sources:
+                if 'redgifs.com' in link:
+                    video_url = link.split('?')[0] # Clean URL
+                    break
+
+            if video_url:
+                posts_data.append({
+                    "title": p.get('title'),
+                    "video_url": video_url,
+                    "reddit_link": f"https://reddit.com{p.get('permalink')}"
+                })
+
+        after = json_data.get('after')
+        if not after:
+            break
+            
+        print(f"Found {len(posts_data)} relevant posts...")
+        time.sleep(1.2) # Polite delay
+
+    return posts_data[:limit]
+
+# --- Usage Example ---
+# results = get_reddit_redgifs("AngelaWhite", limit=100, time_period="all")
+# for item in results:
+#     print(f"Title: {item['title']}")
+#     print(f"URL: {item['video_url']}\n")
 
