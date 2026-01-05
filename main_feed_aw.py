@@ -16,7 +16,6 @@ import helper
 #print('sleep time: ', sleep_time, flush=True)
 #time.sleep(sleep_time)
 
-imojis_list = ['🤍','💟','😍','🤩','🫣','🥵','🥹','❤️‍🔥','🫶','🫦','🔥','✨','💖','💦','⭐','👑']
 def get_tweet_title(reddit_title):
 	try:
 		#reddit_title_clean = reddit_title.replace('[Discussion]','').replace('[Pick]','')
@@ -32,11 +31,11 @@ def get_tweet_title(reddit_title):
 			print('reddit_title within get_tweet_title: ', reddit_title)
 			return reddit_title
 		else:
-			return random.choice(imojis_list)*3
+			return random.choice(helper.imojis_list)*3
 		#return final_twitter_title
 	except:
 		print('Error in title')
-		final_twitter_title = random.choice(imojis_list)*3
+		final_twitter_title = random.choice(helper.imojis_list)*3
 		#print(final_twitter_title)
 		return final_twitter_title
 		pass
@@ -47,12 +46,12 @@ def get_tweet_title(reddit_title):
 
 input_args = sys.argv
 
-reddit = praw.Reddit(client_id=str(input_args[1]), #REDDIT_CLIENT_ID
-						client_secret=str(input_args[2]),#REDDIT_CLIENT_SECRET
-						password=str(input_args[3]), #REDDIT_PASSWORD
-						user_agent=str(input_args[4]), #REDDIT_USER_AGENT
-						username=str(input_args[5]) #REDDIT_USER_NAME
-						)
+#reddit = praw.Reddit(client_id=str(input_args[1]), #REDDIT_CLIENT_ID
+#						client_secret=str(input_args[2]),#REDDIT_CLIENT_SECRET
+#						password=str(input_args[3]), #REDDIT_PASSWORD
+#						user_agent=str(input_args[4]), #REDDIT_USER_AGENT
+#						username=str(input_args[5]) #REDDIT_USER_NAME
+#						)
 twitter_api_authorized = Api(
 		access_token=input_args[6], #TWITTER_ACCESS_TOKEN,
 		access_secret=input_args[7], #TWITTER_ACCESS_TOKEN_SECRET
@@ -80,36 +79,35 @@ try:
 except:
 	bad_urls = []
 
-
-
 #Load Reddits
-reddits_with_redgif = [x for x in reddit.subreddit('AngelaWhite').top(time_filter='year',limit=1000) if ('redgifs' in x.url)]
-reddits_with_redgif = reddits_with_redgif + [x for x in reddit.subreddit('AngelaWhite').top(time_filter='month',limit=1000) if ('redgifs' in x.url)]
-reddits_with_redgif = reddits_with_redgif + [x for x in reddit.subreddit('AngelaWhite').top(time_filter='all',limit=1000) if ('redgifs' in x.url)]
-reddits_with_redgif = list(set(reddits_with_redgif))
+reddits_with_redgif = helper.get_reddit_redgifs('AngelaWhite', time_period='month')
+reddits_with_redgif = reddits_with_redgif + helper.get_reddit_redgifs('AngelaWhite', time_period='year')
+reddits_with_redgif = reddits_with_redgif + helper.get_reddit_redgifs('AngelaWhite', time_period='all')
+print('population before removing duplicates: ', len(reddits_with_redgif))
+reddits_with_redgif = [dict(t) for t in {tuple(sorted(d.items())) for d in reddits_with_redgif}]
 print('population: ', len(reddits_with_redgif))
-reddits_with_redgif = [x for x in reddits_with_redgif if str(x.url) not in bad_urls]
+reddits_with_redgif = [x for x in reddits_with_redgif if str(x['video_url']) not in bad_urls]
 print('population without bads: ', len(reddits_with_redgif))
-reddits_with_redgif = [x for x in reddits_with_redgif if str(x.url) not in all_urls_ever]
+reddits_with_redgif = [x for x in reddits_with_redgif if str(x['video_url']) not in all_urls_ever]
 print('population without already dones: ', len(reddits_with_redgif))
 
-if len(reddits_with_redgif) == 0:
-	reddits_with_redgif = [x for x in reddit.subreddit('AngelaWhite').top(time_filter='year',limit=1000) if ('redgifs' in x.url)]
-	reddits_with_redgif = reddits_with_redgif + [x for x in reddit.subreddit('AngelaWhite').top(time_filter='month',limit=1000) if ('redgifs' in x.url)]
-	reddits_with_redgif = reddits_with_redgif + [x for x in reddit.subreddit('AngelaWhite').top(time_filter='all',limit=1000) if ('redgifs' in x.url)] 
-	reddits_with_redgif = [x for x in reddits_with_redgif if str(x.url) not in bad_urls]
+if len(reddits_with_redgif) < 5:
+	reddits_with_redgif = helper.get_reddit_redgifs('AngelaWhite', time_period='month')
+	reddits_with_redgif = reddits_with_redgif + helper.get_reddit_redgifs('AngelaWhite', time_period='year')
+	reddits_with_redgif = reddits_with_redgif + helper.get_reddit_redgifs('AngelaWhite', time_period='all')
+	reddits_with_redgif = [x for x in reddits_with_redgif if str(x['video_url']) not in bad_urls]
 	all_urls_ever = []
 	
 for reddit_submission in reddits_with_redgif:
 	random_index_selection = random.randint(0,len(reddits_with_redgif)-1)
-	submission_url = reddits_with_redgif[random_index_selection].url
-	submission_title = reddits_with_redgif[random_index_selection].title
+	submission_url = reddits_with_redgif[random_index_selection]['video_url']
+	submission_title = reddits_with_redgif[random_index_selection]['title']
 	if (str(submission_url) not in all_urls_ever):
 		break
 	else:
 		continue
 
-tweet_title_final = random.choice(imojis_list)*3 #get_tweet_title(submission_title) 
+tweet_title_final = random.choice(helper.imojis_list)*3 #get_tweet_title(submission_title) 
 print('submission_url: ', submission_url)
 print('submission_title: ', submission_title)
 print('tweet_title_final: ', tweet_title_final)
